@@ -1,0 +1,33 @@
+<h1>find your favourite area</h1>
+
+<%= form_tag('/index',:method=>'get') do %>
+  <%= select_tag "area", options_for_select(@areas) %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
+<h1>Listing data</h1>
+ 
+
+<table border="border">
+  <tr>
+    <th>name</th>
+    <th>phone</th>
+      <th>area</th>
+      <th>typeofroom</th>
+      <th>1bhk</th>
+      <th>2bhk</th>
+      <th>3bhk</th>
+  </tr>
+ 
+  <% @reg.each do |regs| %>
+    <tr>
+      <td><%= regs.name %></td>
+      <td><%= regs.phone %></td>
+      <td><%= regs.area %></td>
+      <td><%= regs.typeofroom %></td>
+      <td><%= regs.onebhk %></td>
+      <td><%= regs.twobhk %></td>
+      <td><%= regs.threebhk %></td>
+    </tr>
+  <% end %>
+</table>

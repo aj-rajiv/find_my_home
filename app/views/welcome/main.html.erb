@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+</head>
+<body>
+<div>
+<div id="home" style="background:orange">
+<ul>
+<li style="display:inline;color:black"><a href="#home">HOME</a></li>
+<li style="display:inline;color:black"><a href="#about">ABOUT US</a></li>
+<li style="display:inline;color:black"><a href="#contact">CONTACT US</a></li>
+<li style="display:inline;color:black"><%=link_to "REGISTRATION", controller: "registrations",action: "reg"%></li>
+<li style="display:inline;color:black"><%=link_to "LOGIN", controller: "logins",action: "log"%></li>
+</ul>
+</div>
+<div id="about" style="background:orange">
+<p>here we provide details about homes for pg and rent</p>
+</div>
+<div id="contact" style="background:yellow">
+<p>bangalore 9999900000</p>
+<%=link_to 'DISPLAY' ,controller: 'registrations',action: 'index'%> 
+</div>
+
+<div id="footer" style="background:yellow">
+<p>fb gmail twitter &copy; 2017</p>
+</div>
+</div>
+</body>
+</html>

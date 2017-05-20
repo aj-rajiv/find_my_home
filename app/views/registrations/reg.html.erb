@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+</head>
+<body>
+<div>
+<div id="home" style="background:orange">
+<ul>
+<li style="display:inline;color:black"><%= link_to "HOME" ,controller: "welcome", action: "main" %></li>
+<li style="display:inline;color:black"><%= link_to "ABOUT US" ,controller: "welcome", action: "main" %></li>
+<li style="display:inline;color:black"><%= link_to "CONTACT US" ,controller: "welcome", action: "main" %></li>
+<li style="display:inline;color:black"><%=link_to "REGISTRATION", controller: "registrations",action: "reg"%></li>
+<li style="display:inline;color:black"><%=link_to "LOGIN", controller: "logins",action: "log"%></li>
+</ul>
+</div>
+<div id="register" style="background:orange"><br/>
+<h1 align="center"> LANDLORD REGISTRATION</h1>
+<h2 align="right"><%=link_to "LOGIN", controller: "logins",action: "log"%></h2>
+<br/>
+<%= form_for :reg, url: '/registrations' do |f| %>
+
+  Name: <%= f.text_field :name %><br/>
+  Phone: <%= f.text_field :phone %><br/>
+  Email: <%= f.text_field :email %><br/>
+  Password: <%= f.password_field :password %><br/>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br/>
+  City:<%=f.select :city,['Bangalore','Bangalore']%><br/>
+  Area for rent:<%=f.select :area,[['MALLESWARAM','MALLESWARAM'],['SHIVAJINAGAR','SHIVAJINAGAR'],['YESHWANTHPUR','YESHWANTHPUR'],['BTM','BTM'],['JALAHALLI','JALAHALLI'],['ELECTRIONIC CITY','ELECTRIONIC CITY']] %><br/><br/>
+  Types of Room:<%=f.select :typeofroom,[['PG','PG'],['FLAT','FLAT'],['HOUSE','HOUSE']]%><br/>
+  <h3>Number of Rooms</h3><br/>
+  1bhk:<%=f.check_box :onebhk ,{}, "Yes", "No"%>  
+   2bhk:<%=f.check_box :twobhk ,{}, "Yes", "No"%>  
+    3bhk:<%=f.check_box :threebhk,{}, "Yes", "No"%>  <br/>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+
+</div>
+<div id="footer" style="background:yellow">
+<p>fb gmail twitter &copy; 2017</p>
+</div>
+</div>
+</body>
+</html>
+

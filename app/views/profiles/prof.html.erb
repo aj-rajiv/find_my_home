@@ -1,0 +1,11 @@
+
+<% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", controller: "logins",action: "destroy" %>
+<% else %>
+  <%= link_to 'Login', '/login' %> 
+<% end %>
+<%= link_to 'Show' , '/profile/:id'%>
+<%= link_to 'Edit', '/profile/:id/edit'%>
+<%= link_to 'Destroy', '/profile/:id',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>

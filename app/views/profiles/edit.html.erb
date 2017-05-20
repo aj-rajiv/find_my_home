@@ -1,0 +1,54 @@
+<h1>Edit data</h1>
+ 
+<%= form_for :reg, url: {action: "update"}, :method => :patch do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </p>
+
+<p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+<p>
+<%= f.label :city%><br>
+<%=f.select :city,['Bangalore','Bangalore']%>
+</p>
+<p>
+    <%= f.label :area %><br>
+  <%=f.select :area,[['MALLESWARAM','MALLESWARAM'],['SHIVAJINAGAR','SHIVAJINAGAR'],['YESHWANTHPUR','YESHWANTHPUR'],['BTM','BTM'],['JALAHALLI','JALAHALLI'],['ELECTRIONIC CITY','ELECTRIONIC CITY']] %>
+  </p>
+
+<p>
+    <%= f.label :typeofroom %><br>
+   <%=f.select :typeofroom,[['PG','PG'],['FLAT','FLAT'],['HOUSE','HOUSE']]%>
+  </p>
+
+<h3>Number of Rooms</h3><br/>
+  1bhk:<%=f.check_box :onebhk ,{}, "Yes", "No"%>  
+   2bhk:<%=f.check_box :twobhk ,{}, "Yes", "No"%>  
+    3bhk:<%=f.check_box :threebhk,{}, "Yes", "No"%>  <br/>
+    <h3>change password</h3>
+  <p>
+ <%= f.label :password %><br>
+<%= f.password_field :password %><br/>
+</p>
+<p>
+<%= f.label :password_confirmation %><br>
+ <%= f.password_field :password_confirmation %>
+</p>
+  <p>
+    <%= f.submit 'update' %>
+  </p>
+
+
+ 
+ 
+<% end %>
